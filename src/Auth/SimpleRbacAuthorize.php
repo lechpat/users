@@ -88,8 +88,8 @@ class SimpleRbacAuthorize extends BaseAuthorize
         //specific actions allowed for the user role in Users plugin
         [
             'role' => 'user',
-            'plugin' => 'CakeDC/Users',
-            'controller' => 'Users',
+            'plugin' => 'Users',
+            'controller' => 'Gateway',
             'action' => ['profile', 'logout'],
         ],
         //all roles allowed to Pages/display

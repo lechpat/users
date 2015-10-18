@@ -14,7 +14,7 @@ use Cake\Core\Configure;
 $config = [
     'Users' => [
         //Table used to manage users
-        'table' => 'CakeDC/Users.Users',
+        'table' => 'Users.Users',
         //configure Auth component
         'auth' => true,
         //Password Hasher
@@ -44,7 +44,7 @@ $config = [
         'Profile' => [
             //Allow view other users profiles
             'viewOthers' => true,
-            'route' => ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'profile'],
+            'route' => ['plugin' => 'Users', 'controller' => 'Users', 'action' => 'profile'],
         ],
         'Key' => [
             'Session' => [
@@ -67,7 +67,7 @@ $config = [
             ],
         ],
         //Avatar placeholder
-        'Avatar' => ['placeholder' => 'CakeDC/Users.avatar_placeholder.png'],
+        'Avatar' => ['placeholder' => 'Users.avatar_placeholder.png'],
         'RememberMe' => [
             //configure Remember Me component
             'active' => true,
@@ -83,27 +83,27 @@ $config = [
 //default configuration used to auto-load the Auth Component, override to change the way Auth works
     'Auth' => [
         'loginAction' => [
-            'plugin' => 'CakeDC/Users',
+            'plugin' => 'Users',
             'controller' => 'Users',
             'action' => 'login',
         ],
         'authenticate' => [
             'all' => [
-                'scope' => ['active' => 1]
+                'scope' => ['enabled' => 1]
             ],
-            'CakeDC/Users.RememberMe',
+            'Users.RememberMe',
             'Form',
         ],
         'authorize' => [
-            'CakeDC/Users.Superuser',
-            'CakeDC/Users.SimpleRbac',
+            'Users.Superuser',
+            'Users.SimpleRbac',
         ],
     ],
 //default Opauth configuration, you'll need to provide the strategy keys
     'Opauth' => [
-        'path' => ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'opauthInit'],
+        'path' => ['plugin' => 'Users', 'controller' => 'Users', 'action' => 'opauthInit'],
         'callback_param' => 'callback',
-        'complete_url' => ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'login'],
+        'complete_url' => ['plugin' => 'Users', 'controller' => 'Users', 'action' => 'login'],
         'Strategy' => [
             'Facebook' => [
                 'scope' => ['public_profile', 'user_friends', 'email'],

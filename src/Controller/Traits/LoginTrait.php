@@ -55,7 +55,7 @@ trait LoginTrait
             $this->Flash->success($msg);
         } catch (MissingEmailException $ex) {
             $this->Flash->success(__d('Users', 'Please enter your email'));
-            return $this->redirect(['controller' => 'Users', 'action' => 'socialEmail']);
+            return $this->redirect(['controller' => 'Gateway', 'action' => 'socialEmail']);
         }
     }
 
@@ -90,7 +90,7 @@ trait LoginTrait
                     empty($socialDataEmail) &&
                     empty($postedEmail)) {
                         return $this->redirect([
-                            'controller' => 'Users',
+                            'controller' => 'Gateway',
                             'action' => 'socialEmail'
                         ]);
                 }

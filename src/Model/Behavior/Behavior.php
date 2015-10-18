@@ -41,7 +41,7 @@ class Behavior extends BaseBehavior
                 ->subject($firstName . $subject)
                 ->viewVars($user->toArray());
         if (empty($email)) {
-            $emailInstance->template('CakeDC/Users.validation');
+            $emailInstance->template('Users.validation');
         }
         return $emailInstance->send();
     }

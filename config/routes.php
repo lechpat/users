@@ -12,7 +12,7 @@
 use Cake\Core\Configure;
 use Cake\Routing\Router;
 
-Router::plugin('CakeDC/Users', ['path' => '/users'], function ($routes) {
+Router::plugin('Users', ['path' => '/users'], function ($routes) {
     $routes->fallbacks('DashedRoute');
 });
 
@@ -27,10 +27,10 @@ if (is_array($oauthPath)) {
 }
 
 Router::connect('/accounts/validate/*', [
-    'plugin' => 'CakeDC/Users',
+    'plugin' => 'Users',
     'controller' => 'SocialAccounts',
     'action' => 'validate'
 ]);
-Router::connect('/profile/*', ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'profile']);
-Router::connect('/login', ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'login']);
-Router::connect('/logout', ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'logout']);
+Router::connect('/profile/*', ['plugin' => 'Users', 'controller' => 'Gateway', 'action' => 'profile']);
+Router::connect('/login', ['plugin' => 'Users', 'controller' => 'Gateway', 'action' => 'login'],['_name' => 'login']);
+Router::connect('/logout', ['plugin' => 'Users', 'controller' => 'Gateway', 'action' => 'logout'],['_name' => 'logout']);

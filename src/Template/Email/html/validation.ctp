@@ -12,7 +12,7 @@
 $activationUrl = [
     '_full' => true,
     'plugin' => 'Users',
-    'controller' => 'Users',
+    'controller' => 'Gateway',
     'action' => 'validateEmail',
     isset($token) ? $token : ''
 ];

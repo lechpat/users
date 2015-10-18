@@ -50,7 +50,7 @@ class SocialAccountsTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
-        $this->addBehavior('CakeDC/Users.SocialAccount');
+        $this->addBehavior('Users.SocialAccount');
     }
 
     /**

@@ -80,7 +80,7 @@ class RegisterBehavior extends Behavior
     public function validate($token, $callback = null)
     {
         $user = $this->_table->find()
-            ->select(['token_expires', 'id', 'active', 'token'])
+            ->select(['token_expires', 'id', 'enabled', 'token'])
             ->where(['token' => $token])
             ->first();
         if (empty($user)) {

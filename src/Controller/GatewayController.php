@@ -26,7 +26,7 @@ use Cake\ORM\Table;
  *
  * @property UsersTable $Users
  */
-class UsersController extends AppController
+class GatewayController extends AppController
 {
     use LoginTrait;
     use ProfileTrait;

@@ -50,7 +50,7 @@ class UsersShell extends Shell
     public function getOptionParser()
     {
         $parser = parent::getOptionParser();
-        $parser->description(__d('Users', 'Utilities for CakeDC Users Plugin'))
+        $parser->description(__d('Users', 'Utilities for Users Plugin'))
             ->addSubcommand('activateUser')->description(__d('Users', 'Activate an specific user'))
             ->addSubcommand('addSuperuser')->description(__d('Users', 'Add a new superadmin user for testing purposes'))
             ->addSubcommand('addUser')->description(__d('Users', 'Add a new user'))

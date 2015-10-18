@@ -79,7 +79,7 @@ class SocialAccountBehavior extends Behavior
     {
         $emailInstance = $this->_getEmailInstance($email);
         if (empty($email)) {
-            $emailInstance->template('CakeDC/Users.social_account_validation');
+            $emailInstance->template('Users.social_account_validation');
         }
         $firstName = isset($user['first_name'])? $user['first_name'] . ', ' : '';
         //note: we control the space after the username in the previous line

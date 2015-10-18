@@ -61,7 +61,7 @@ class PasswordBehavior extends Behavior
         }
         $user->updateToken($expiration);
         $saveResult = $this->_table->save($user);
-        $template = !empty($options['emailTemplate']) ? $options['emailTemplate'] : 'CakeDC/Users.reset_password';
+        $template = !empty($options['emailTemplate']) ? $options['emailTemplate'] : 'Users.reset_password';
         if (Hash::get($options, 'sendEmail')) {
             $this->sendResetPasswordEmail($saveResult, null, $template);
         }
@@ -89,7 +89,7 @@ class PasswordBehavior extends Behavior
      * instance
      * @return array email send result
      */
-    public function sendResetPasswordEmail(EntityInterface $user, Email $email = null, $template = 'CakeDC/Users.reset_password')
+    public function sendResetPasswordEmail(EntityInterface $user, Email $email = null, $template = 'Users.reset_password')
     {
         $firstName = isset($user['first_name'])? $user['first_name'] . ', ' : '';
         $subject = __d('Users', '{0}Your reset password link', $firstName);

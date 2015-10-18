@@ -47,12 +47,12 @@ class UsersTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
-        $this->addBehavior('CakeDC/Users.Register');
-        $this->addBehavior('CakeDC/Users.Password');
-        $this->addBehavior('CakeDC/Users.Social');
+        $this->addBehavior('Users.Register');
+        $this->addBehavior('Users.Password');
+        $this->addBehavior('Users.Social');
         $this->hasMany('SocialAccounts', [
             'foreignKey' => 'user_id',
-            'className' => 'CakeDC/Users.SocialAccounts'
+            'className' => 'Users.SocialAccounts'
         ]);
     }
 
