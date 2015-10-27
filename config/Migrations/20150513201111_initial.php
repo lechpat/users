@@ -92,7 +92,7 @@ class Initial extends AbstractMigration
                 'null' => false,
             ])
             ->create();
-        $table = $this->table('users', ['id' => false, 'primary_key' => ['id']]);
+/*        $table = $this->table('users', ['id' => false, 'primary_key' => ['id']]);
         $table
             ->addColumn('id', 'char', [
                 'default' => null,
@@ -172,12 +172,12 @@ class Initial extends AbstractMigration
                 'limit' => null,
                 'null' => false,
             ])
-            ->create();
+            ->create(); */
     }
 
     public function down()
     {
         $this->dropTable('social_accounts');
-        $this->dropTable('users');
+//        $this->dropTable('users');
     }
 }

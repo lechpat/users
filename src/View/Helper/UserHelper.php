@@ -120,8 +120,24 @@ class UserHelper extends Helper
         }
 
         $profileUrl = Configure::read('Users.Profile.route');
-        $label = __d('Users', 'Welcome, {0}', $this->Html->link($this->request->session()->read('Auth.User.first_name'), $profileUrl));
+        $label = __d('Users', '{0}', $this->Html->link($this->request->session()->read('Auth.User.first_name'), $profileUrl));
         return $this->Html->tag('span', $label, ['class' => 'welcome']);
+    }
+
+    public function user($key = null)
+    {
+        $userId = $this->request->session()->read('Auth.User.id');
+        if (empty($userId)) {
+            return;
+        }
+        $_userData =  $this->request->session()->read('Auth.User');
+        if(empty($key)) {
+            return $_userData;
+        }
+        if(empty($_userData[$key])) {
+            return null;
+        }
+        return $_userData[$key];
     }
 
     /**
